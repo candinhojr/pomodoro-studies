@@ -6,22 +6,22 @@ class Form extends React.Component {
     return (
       <form>
         <div>
-          <label htmlFor="tarefa">Adicione um novo estudo</label>
+          <label htmlFor="task">Adicione um novo estudo</label>
           <input
             type="text"
-            name="tarefa"
-            id="tarefa"
+            name="task"
+            id="task"
             placeholder="O que você quer estudar"
             required
           />
         </div>
         <div>
-          <label htmlFor="tempo">Tempo</label>
+          <label htmlFor="time">Tempo</label>
           <input
             type="time"
             step="1"
-            name="tempo"
-            id="tempo"
+            name="time"
+            id="time"
             min="00:00:00"
             max="01:30:00"
             required
