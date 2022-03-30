@@ -15,7 +15,7 @@ export default function Item({
 }: Props) {
   return (
     <li
-      className={`${style.item} ${selected ? style.itemSelected : ""}`}
+      className={`${style.item} ${selected && style.itemSelected}`}
       onClick={() => handleSelected({ task, time, selected, completed, id })}
     >
       <h3>{task}</h3>
