@@ -7,9 +7,10 @@ import { useEffect, useState } from "react";
 
 interface Props {
   selected: ITask | undefined;
+  completeTask: () => void
 }
 
-export default function Timer({ selected }: Props) {
+export default function Timer({ selected, completeTask }: Props) {
   const [time, setTime] = useState<number>();
 
   useEffect(() => {
@@ -22,6 +23,7 @@ export default function Timer({ selected }: Props) {
         setTime(timer - 1)
         return regressive(timer - 1)
       }
+      completeTask();
     }, 1000);
   }
 
