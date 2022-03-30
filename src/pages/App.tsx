@@ -7,11 +7,22 @@ import style from "./App.module.scss";
 
 function App() {
   const [tasks, setTasks] = useState<ITask[]>([]);
+  const [selected, setSelected] = useState<ITask>();
+
+  function handleSelected(taskSelected: ITask) {
+    setSelected(taskSelected);
+    setTasks((previousTasks) =>
+      previousTasks.map((task) => ({
+        ...task,
+        selected: task.id === taskSelected.id ? true : false,
+      }))
+    );
+  }
 
   return (
     <div className={style.AppStyle}>
       <Form setTasks={setTasks} />
-      <List tasks={tasks} />
+      <List tasks={tasks} handleSelected={handleSelected} />
       <Timer />
     </div>
   );
